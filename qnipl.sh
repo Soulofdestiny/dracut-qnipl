@@ -5,6 +5,18 @@ function diag {
     echo "qnIPL: $1"
 }
 
+function draw_logo {
+    echo "==================================="
+    echo "==              ___ ____  _      =="
+    echo "==   __ _ _ __ |_ _|  _ \| |     =="   
+    echo "==  / _\` | \'_ \ | || |_) | |     =="
+    echo "== | (_| | | | || ||  __/| |___  =="
+    echo "==  \__, |_| |_|___|_|   |_____| =="
+    echo "==    |_|                        =="
+    echo "==================================="
+
+}
+
 # we need this module for network
 modprobe qeth
 
@@ -47,7 +59,8 @@ function load_inst_kernel {
 }
 
 
-
+echo "===== Starting qnIPL =====\n"
+draw_logo
 collect_vars
 setup_network
 collect_kern_initrd
