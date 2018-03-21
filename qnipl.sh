@@ -5,6 +5,10 @@ modprobe qeth
 
 CMDLINE=$(cat /proc/cmdline)
 
+function diag {
+    echo "qnIPL: $1"
+}
+
 function get_kparam {
     REQ_PARAM=$1
     echo $CMDLINE | tr " " "\n" | grep -i "$REQ_PARAM=" | cut -d "=" -f 2-
